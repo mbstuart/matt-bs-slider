@@ -2,7 +2,7 @@
      class="noUi-target noUi-ltr noUi-horizontal">
   <div class="noUi-base">
     <div class="noUi-origin"
-         [style.left] = "calculatePercentMin(this.min)">
+         [style.left] = "calc.calculatePercentMin(min, lowerBound, upperBound)">
       <div class="noUi-handle noUi-handle-lower"
            data-handle="0"
            tabindex="0"
@@ -15,11 +15,11 @@
            style="z-index: 5;"></div>
     </div>
     <div class="noUi-connect"
-         [style.left] = "calculatePercentMin(this.min)"
-         [style.right] = "calculatePercentRightForBar(this.max)"
+         [style.left] = "calc.calculatePercentMin(min, lowerBound, upperBound)"
+         [style.right] = "calc.calculatePercentRightForBar(max, lowerBound, upperBound)"
          ></div>
     <div class="noUi-origin"
-          [style.left] = "calculatePercentMax(this.max)">
+          [style.left] = "calc.calculatePercentMax(max, lowerBound, upperBound)">
       <div class="noUi-handle noUi-handle-upper"
            data-handle="1"
            tabindex="0"

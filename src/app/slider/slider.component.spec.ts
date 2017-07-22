@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SliderComponent } from './slider.component';
+import { CalcService } from './calc/calc.service';
 
 describe('SliderComponent', () => {
   let component: SliderComponent;
@@ -8,7 +9,8 @@ describe('SliderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SliderComponent ]
+      declarations: [ SliderComponent ],
+       providers: [CalcService]
     })
     .compileComponents();
   }));
@@ -27,11 +29,5 @@ describe('SliderComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should correctly calculate percentage left', () => {
-const leftString = component.calculatePercentMin(component.min);
-
-    expect(leftString).toEqual('25%');
   });
 });

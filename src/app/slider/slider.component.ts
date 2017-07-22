@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CalcService } from './calc/calc.service';
 
 @Component({
   selector: 'app-slider',
@@ -35,21 +36,21 @@ export class SliderComponent implements OnInit {
 
   @Input() public upperBound = 100;
 
-  constructor() { }
+  constructor(public calc: CalcService) { }
 
   ngOnInit() {
   }
 
-  public calculatePercentMin(minValue): string {
-    return (100 * (minValue - this.lowerBound) / (this.upperBound - this.lowerBound)).toString() + '%';
-  }
+  // public calculatePercentMin(minValue): string {
+  //   return (100 * (minValue - this.lowerBound) / (this.upperBound - this.lowerBound)).toString() + '%';
+  // }
 
-  public calculatePercentMax(maxValue): string {
-    return (100 * (maxValue - this.lowerBound) / (this.upperBound - this.lowerBound)).toString() + '%';
-  }
+  // public calculatePercentMax(maxValue): string {
+  //   return (100 * (maxValue - this.lowerBound) / (this.upperBound - this.lowerBound)).toString() + '%';
+  // }
 
-  public calculatePercentRightForBar(maxValue): string {
-    return (100 * (this.upperBound - maxValue) / (this.upperBound - this.lowerBound)).toString() + '%';
-  }
+  // public calculatePercentRightForBar(maxValue): string {
+  //   return (100 * (this.upperBound - maxValue) / (this.upperBound - this.lowerBound)).toString() + '%';
+  // }
 
 }
