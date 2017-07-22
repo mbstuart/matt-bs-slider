@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  public min = 25;
+  public max = 75;
+
+  public lowerLimit = 0;
+  public upperLimit = 100;
+
+
 }

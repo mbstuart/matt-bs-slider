@@ -1,3 +1,35 @@
-<p>
-  slider works!
-</p>
+<div id="slider"
+     class="noUi-target noUi-ltr noUi-horizontal">
+  <div class="noUi-base">
+    <div class="noUi-origin"
+         [style.left] = "calculatePercentMin(this.min)">
+      <div class="noUi-handle noUi-handle-lower"
+           data-handle="0"
+           tabindex="0"
+           role="slider"
+           aria-orientation="horizontal"
+           aria-valuemin="0.0"
+           aria-valuemax="80.0"
+           aria-valuenow="20.0"
+           aria-valuetext="20.00"
+           style="z-index: 5;"></div>
+    </div>
+    <div class="noUi-connect"
+         [style.left] = "calculatePercentMin(this.min)"
+         [style.right] = "calculatePercentRightForBar(this.max)"
+         ></div>
+    <div class="noUi-origin"
+          [style.left] = "calculatePercentMax(this.max)">
+      <div class="noUi-handle noUi-handle-upper"
+           data-handle="1"
+           tabindex="0"
+           role="slider"
+           aria-orientation="horizontal"
+           aria-valuemin="20.0"
+           aria-valuemax="100.0"
+           aria-valuenow="80.0"
+           aria-valuetext="80.00"
+           style="z-index: 4;"></div>
+    </div>
+  </div>
+</div>

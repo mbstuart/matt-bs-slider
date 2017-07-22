@@ -17,9 +17,21 @@ describe('SliderComponent', () => {
     fixture = TestBed.createComponent(SliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    component.min = 25;
+    component.max = 75;
+    component.lowerBound = 0;
+    component.upperBound = 100;
+
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should correctly calculate percentage left', () => {
+const leftString = component.calculatePercentMin(component.min);
+
+    expect(leftString).toEqual('25%');
   });
 });
