@@ -1,8 +1,11 @@
 <div id="slider"
      class="noUi-target noUi-ltr noUi-horizontal">
   <div class="noUi-base">
-    <div class="noUi-origin"
-         [style.left] = "calc.calculatePercentMin(min, lowerBound, upperBound)">
+    <div class="noUi-origin handle-lower-wrapper"
+         [style.left] = "calc.calculatePercentMin(min, lowerBound, upperBound)"
+         (mousedown)="toggleMouseDown(false, true, $event)"
+
+         >
       <div class="noUi-handle noUi-handle-lower"
            data-handle="0"
            tabindex="0"
@@ -18,8 +21,10 @@
          [style.left] = "calc.calculatePercentMin(min, lowerBound, upperBound)"
          [style.right] = "calc.calculatePercentRightForBar(max, lowerBound, upperBound)"
          ></div>
-    <div class="noUi-origin"
-          [style.left] = "calc.calculatePercentMax(max, lowerBound, upperBound)">
+    <div class="noUi-origin handle-upper-wrapper"
+          [style.left] = "calc.calculatePercentMax(max, lowerBound, upperBound)"
+         (mousedown)="toggleMouseDown(true, true, $event)"
+          >
       <div class="noUi-handle noUi-handle-upper"
            data-handle="1"
            tabindex="0"

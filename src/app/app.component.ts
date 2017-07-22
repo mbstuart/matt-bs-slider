@@ -14,5 +14,4 @@ export class AppComponent {
   public lowerLimit = 0;
   public upperLimit = 100;
 
-
 }

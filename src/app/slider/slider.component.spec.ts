@@ -9,10 +9,10 @@ describe('SliderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SliderComponent ],
-       providers: [CalcService]
+      declarations: [SliderComponent],
+      providers: [CalcService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,5 +29,19 @@ describe('SliderComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should update slider left handle when min is updated', () => {
+    component.min = 10;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.handle-lower-wrapper').style.left).toEqual('10%');
+  });
+
+    it('should update slider right handle when min is updated', () => {
+    component.max = 85;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.handle-upper-wrapper').style.left).toEqual('85%');
   });
 });
