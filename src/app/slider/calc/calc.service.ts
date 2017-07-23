@@ -16,10 +16,10 @@ export class CalcService {
   }
 
   public calculateMinAfterMousemove(maxValue: number, lowerBound: number, upperBound: number, percentAlong: number, step: number): number {
-    return _.round(Math.min(maxValue, Math.max(lowerBound, (percentAlong * (upperBound - lowerBound)) + lowerBound)) / step, 0) * step;
+    return Math.min(maxValue, _.round( Math.max(lowerBound, (percentAlong * (upperBound - lowerBound)) + lowerBound) / step, 0) * step);
   }
 
   public calculateMaxAfterMousemove(minValue, lowerBound, upperBound, percentAlong, step: number): number {
-    return _.round(Math.max(minValue, Math.min(upperBound, (percentAlong * (upperBound - lowerBound)) + lowerBound)) / step, 0) * step;
+    return Math.max(minValue, _.round(Math.min(upperBound, (percentAlong * (upperBound - lowerBound)) + lowerBound) / step, 0) * step);
   }
 }

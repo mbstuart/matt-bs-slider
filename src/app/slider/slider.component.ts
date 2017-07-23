@@ -25,8 +25,12 @@ export class SliderComponent implements OnInit {
 
   @Output() maxChange = new EventEmitter();
   public set max(newValue: number) {
-    this._max = newValue;
-    this.maxChange.emit(newValue);
+    if (newValue !== null && newValue !== undefined) {
+      this._max = newValue;
+      this.maxChange.emit(newValue);
+    } else {
+      this._max = this.upperBound;
+    }
   }
 
   @Input() public get min() {
@@ -35,8 +39,12 @@ export class SliderComponent implements OnInit {
 
   @Output() minChange = new EventEmitter();
   public set min(newValue: number) {
-    this._min = newValue;
-    this.minChange.emit(newValue);
+    if (newValue !== null && newValue !== undefined) {
+      this._min = newValue;
+      this.minChange.emit(newValue);
+    } else {
+      this._min = this.lowerBound;
+    }
   }
 
   @Input() public lowerBound = 0;
