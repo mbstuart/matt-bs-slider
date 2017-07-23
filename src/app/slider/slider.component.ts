@@ -51,7 +51,7 @@ export class SliderComponent implements OnInit {
 
   @Input() public upperBound = 100;
 
-  @Input() public step = 1;
+  @Input() public step = 0.1;
 
 
   constructor(public calc: CalcService, private elRef: ElementRef, private renderer: Renderer) { }
